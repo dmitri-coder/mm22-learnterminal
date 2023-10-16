@@ -1,45 +1,24 @@
 import chalk from 'chalk';
 import boxen from 'boxen';
-import readline from 'readline';
 
 function write(text) {
     process.stdout.write(text);
 }
-console.clear();
-readline.emitKeypressEvents(process.stdin);
 
-if(process.stdin.isTTY){
-    process.stdin.setRawMode(true);
-}
+//console.log(chalk.bgGreen.magenta('Hello world'));
+//console.log(chalk.bgGreen.magenta.underline('Hello world'));
+//console.log(chalk.italic('Hello world'));
+//console.log(chalk.strikethrough('Hello world'));
+//console.log(chalk.inverse('Hello world')); 
+//console.log(boxen(chalk.bgGreen.magenta('Hello world'), {borderStyle:'round'}));
 
+console.log(boxen(chalk.bgGreen.black('Amongus'), {title: 'Sus', borderStyle:'double'}));
 
-write('@');
+console.log(boxen(chalk.bgWhite.green('Hello Imposter'), {padding: 1, margin: 1, borderStyle: 'classic'}));
+console.log(boxen(chalk.bgRed.green('We have an imposter among us'), {padding: 1, margin: 4, borderColor: 'magenta', borderStyle: 'arrow'}));
 
-process.stdin.on('keypress', (chunk, key) => {
-    if(key && key.name === 'c' && key.ctrl === true){
-        process.exit();
-    }
-    if(key && key.name === 'd'){
-       write('\x1B[1D');
-       write(' @'); 
-    }
-    if(key && key.name === 's'){
-        write('\x1B[1D');
-        write(' ');
-        write('\x1B[1D');
-        write('\x1B[1B');
-        write('@');
-    }
-    if(key && key.name === 'a'){
-        write('\x1B[2D');
-        write('@ '); 
-        write('\x1B[1D');
-    }
-    if(key && key.name === 'w'){
-        write('\x1B[1D');
-        write(' ');
-        write('\x1B[1D');
-        write('\x1B[1A');
-        write('@');
-    }
-});
+console.log(boxen(chalk.bold.inverse('Lets go golfing'), {padding: 2, margin: 2,  borderStyle: 'double'}));
+console.log(boxen(chalk.italic.inverse('Tell them to bring out the whole ocean'), {padding: 2, margin: 5, borderColor: 'magenta', borderStyle: 'none'}));
+console.log(boxen(chalk.bgCyan.inverse('A lot of turbulence?'), {padding: 2, margin: 1, borderStyle: 'classic'}));
+console.log(boxen(chalk.bgWhite.black('Life is roblox!'), {title: 'Khaled', borderStyle:'double'}));
+console.log(boxen('Did you pray today?', {dimBorder: 0.35, width: 25,height:5}));
