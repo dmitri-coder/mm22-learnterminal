@@ -5,10 +5,15 @@ function write(text) {
     process.stdout.write(text);
 }
 
-console.log(chalk.bgGreen.magenta('Hello world'));
-console.log(chalk.bgGreen.magenta.underline('Hello world'));
-console.log(chalk.italic('Hello world'));
-console.log(chalk.strikethrough('Hello world'));
-console.log(chalk.inverse('Hello world')); 
-
-console.log(boxen(chalk.bgGreen.magenta('Hello world'), {borderStyle:'round'}));
+//for(let i = 0; i<255;i++){
+//    write(chalk.rgb(i,i,i)('#'))
+//}
+//console.log(chalk.italic('hello world'));
+let time = new Date().toLocaleTimeString();
+write('\x1B[?25l'); // turn cursor invisible
+setInterval(() => {
+    write('\x1B[8D'); // A up B down C right D left
+    time = new Date().toLocaleTimeString();
+    write(time);
+    write('\x1B[?25l'); // turn cursor visible again
+}, 16);
