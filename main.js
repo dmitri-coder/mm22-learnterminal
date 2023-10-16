@@ -1,4 +1,6 @@
-import inquirer from 'inquirer';
+import chalk from 'chalk';
+import boxen from 'boxen';
+import readline from 'readline';
 
 function write(text) {
     process.stdout.write(text);
