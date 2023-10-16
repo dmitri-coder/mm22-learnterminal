@@ -1,5 +1,4 @@
-import chalk from 'chalk';
-import boxen from 'boxen';
+
 import readline from 'readline';
 
 function write(text) {
